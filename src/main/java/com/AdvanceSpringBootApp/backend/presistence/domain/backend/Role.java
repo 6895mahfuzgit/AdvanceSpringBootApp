@@ -1,5 +1,7 @@
 package com.AdvanceSpringBootApp.backend.presistence.domain.backend;
 
+import com.AdvanceSpringBootApp.enums.RolesEnum;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -21,6 +23,12 @@ public class Role implements Serializable {
     private java.util.Set<UserRole> userRoles = new HashSet<>();
 
     public Role() {
+    }
+
+    public Role(RolesEnum rolesEnum) {
+
+        this.id = rolesEnum.getId();
+        this.name = rolesEnum.getRoleName();
     }
 
 

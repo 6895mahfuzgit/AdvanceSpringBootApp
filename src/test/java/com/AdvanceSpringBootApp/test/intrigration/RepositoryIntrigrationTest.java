@@ -7,6 +7,8 @@ import com.AdvanceSpringBootApp.backend.presistence.domain.backend.User;
 import com.AdvanceSpringBootApp.backend.presistence.repositories.PlanRepository;
 import com.AdvanceSpringBootApp.backend.presistence.repositories.RoleRepository;
 import com.AdvanceSpringBootApp.backend.presistence.repositories.UserRepository;
+import com.AdvanceSpringBootApp.enums.PlansEnum;
+import com.AdvanceSpringBootApp.enums.RolesEnum;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -47,9 +49,9 @@ public class RepositoryIntrigrationTest {
 
     @Test
     public void testCreateNewPlan() throws Exception {
-        Plan plan = createBasicPlan();
+        Plan plan = createBasicPlan(PlansEnum.BASIC);
         planRepository.save(plan);
-        Plan retriview = planRepository.findOne(BASIC_PLAN_ID);
+        Plan retriview = planRepository.findOne(PlansEnum.BASIC.getId());
         Assert.assertNotNull(retriview);
 
     }
@@ -57,46 +59,40 @@ public class RepositoryIntrigrationTest {
     @Test
     public void testCreateNewRole() throws Exception {
 
-        Role role = createBasicRole();
+        Role role = createBasicRole(RolesEnum.BASIC);
 
         roleRepository.save(role);
 
-        Role retriview = roleRepository.findOne(BASIC_ROLE_ID);
+        Role retriview = roleRepository.findOne(RolesEnum.BASIC.getId());
         Assert.assertNotNull(retriview);
 
     }
 
 
     @Test
-    public void testCreateNewUser() throws Exception{
+    public void testCreateNewUser() throws Exception {
 
-        User user=createBasicUser();
+        User user = createBasicUser();
 
         userRepository.save(user);
 
-        User retrivew=userRepository.findOne(1L);
+        User retrivew = userRepository.findOne(1L);
         Assert.assertNotNull(retrivew);
 
 
     }
 
-    private Plan createBasicPlan() {
+    private Plan createBasicPlan(PlansEnum plansEnum) {
 
-        Plan plan = new Plan();
-        plan.setId(BASIC_PLAN_ID);
-        plan.setName("Basic");
 
-        return plan;
+        return new Plan(plansEnum);
 
 
     }
 
-    private Role createBasicRole() {
+    private Role createBasicRole(RolesEnum rolesEnum) {
 
-        Role role = new Role();
-        role.setId(BASIC_ROLE_ID);
-        role.setName("ROLE_USER");
-        return role;
+        return new Role(rolesEnum);
 
 
     }
