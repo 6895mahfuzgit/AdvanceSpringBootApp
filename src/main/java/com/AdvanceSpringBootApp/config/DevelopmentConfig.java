@@ -2,6 +2,8 @@ package com.AdvanceSpringBootApp.config;
 
 import com.AdvanceSpringBootApp.backend.service.EmailService;
 import com.AdvanceSpringBootApp.backend.service.MockEmailService;
+import org.apache.catalina.servlets.WebdavServlet;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -20,5 +22,16 @@ public class DevelopmentConfig {
     public EmailService emailService() {
         return new MockEmailService();
     }
+
+    @Bean
+    public ServletRegistrationBean h2ServletRegistrationBean() {
+
+
+        ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new WebdavServlet());
+
+        servletRegistrationBean.addUrlMappings("/console/**");
+        return servletRegistrationBean;
+    }
+
 
 }

@@ -8,6 +8,9 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created by user on 21-Feb-17.
  */
@@ -28,18 +31,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/about/**",
             "/contact/**",
             "/error/**/*",
-            "/console*//**"
+            "/console/**"
 
     };
 
     @Override
     protected void configure(HttpSecurity security) throws Exception {
 
-        /*List<String> activeProfiles= Arrays.asList(environment.getActiveProfiles());
-        if(activeProfiles.contains("dev")){
+        List<String> activeProfiles = Arrays.asList(environment.getActiveProfiles());
+        if (activeProfiles.contains("dev")) {
             security.csrf().disable();
             security.headers().frameOptions().disable();
-        }*/
+        }
 
 
         security
