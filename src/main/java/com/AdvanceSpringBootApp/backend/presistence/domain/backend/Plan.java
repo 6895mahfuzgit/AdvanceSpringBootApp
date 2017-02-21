@@ -1,4 +1,4 @@
-package com.AdvanceSpringBootApp.backend.presistence.repositories;
+package com.AdvanceSpringBootApp.backend.presistence.domain.backend;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

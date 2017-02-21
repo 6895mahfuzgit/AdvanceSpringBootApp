@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-/*@EnableJpaRepositories(basePackageClasses = "com/AdvanceSpringBootApp/backend//presistence/repositories")*/
+@EnableJpaRepositories(basePackages = "com.AdvanceSpringBootApp.backend.presistence.repositories")
 public class AdvanceSpringBootAppApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AdvanceSpringBootAppApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(AdvanceSpringBootAppApplication.class, args);
+    }
 }

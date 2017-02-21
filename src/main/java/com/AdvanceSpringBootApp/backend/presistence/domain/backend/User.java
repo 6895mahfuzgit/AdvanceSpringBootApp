@@ -1,6 +1,5 @@
-package com.AdvanceSpringBootApp.backend.presistence.repositories;
+package com.AdvanceSpringBootApp.backend.presistence.domain.backend;
 
-import org.hibernate.mapping.Set;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;

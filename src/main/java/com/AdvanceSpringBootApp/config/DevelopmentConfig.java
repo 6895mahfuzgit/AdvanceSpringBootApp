@@ -29,7 +29,7 @@ public class DevelopmentConfig {
 
         ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new WebdavServlet());
 
-        servletRegistrationBean.addUrlMappings("/console/**");
+        servletRegistrationBean.addUrlMappings("/console/*");
         return servletRegistrationBean;
     }
 
