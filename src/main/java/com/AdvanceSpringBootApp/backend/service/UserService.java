@@ -7,6 +7,8 @@ import com.AdvanceSpringBootApp.backend.presistence.repositories.PlanRepository;
 import com.AdvanceSpringBootApp.backend.presistence.repositories.RoleRepository;
 import com.AdvanceSpringBootApp.backend.presistence.repositories.UserRepository;
 import com.AdvanceSpringBootApp.enums.PlansEnum;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -20,6 +22,8 @@ import java.util.Set;
 @Service
 @Transactional(readOnly = true)
 public class UserService {
+
+    private static final Logger LOG = LoggerFactory.getLogger(UserService.class);
 
     @Autowired
     private PlanRepository planRepository;
@@ -60,6 +64,13 @@ public class UserService {
 
         return user;
 
+    }
+
+    @Transactional
+    public void updateUserPassword(long userId, String password) {
+        password = passwordEncoder.encode(password);
+        userRepository.updateUserPassword(userId, password);
+        LOG.debug("Password update Successfully for user id{}", userId);
     }
 
 
