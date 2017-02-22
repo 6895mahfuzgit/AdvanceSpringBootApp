@@ -22,8 +22,12 @@ public class User implements Serializable, UserDetails {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @Column(unique = true)
     private String username;
+
     private String password;
+
+    @Column(unique = true)
     private String email;
 
     @Column(name = "first_name")
@@ -100,11 +104,8 @@ public class User implements Serializable, UserDetails {
     }
 
     /***********
-     *
      * Spring Security Authentication
-     *
-     *
-     * ***********/
+     ***********/
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
