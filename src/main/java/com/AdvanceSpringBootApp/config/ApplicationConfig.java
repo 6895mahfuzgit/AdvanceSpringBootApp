@@ -2,6 +2,7 @@ package com.AdvanceSpringBootApp.config;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -12,5 +13,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(basePackages = "com.AdvanceSpringBootApp.backend.presistence.repositories")
 @EntityScan(basePackages = "com.AdvanceSpringBootApp.backend.presistence.domain.backend")
 @EnableTransactionManagement
+@PropertySource("file:///${user.home}/application-common.properties")
 public class ApplicationConfig {
 }

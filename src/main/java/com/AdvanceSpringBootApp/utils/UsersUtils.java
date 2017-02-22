@@ -13,20 +13,20 @@ public class UsersUtils {
     }
 
 
-    public static User createBasicUser() {
+    public static User createBasicUser(String username, String email) {
 
 
         User user = new User();
 
         user.setCounbtry("Bangladesh");
         user.setDescription("This is a test user");
-        user.setEmail("mahfuz@gmail.com");
+        user.setEmail(email);
         user.setEnabled(true);
         user.setFirstName("Mahfuz");
         user.setLasttName("Shazol");
         user.setPassword("mahfuz");
         user.setPhoneNumber("+88943253453464646");
-        user.setUsername("mahfuz");
+        user.setUsername(username);
         user.setProfileImageUrl("http://www.fakepass.com/12");
 
         return user;

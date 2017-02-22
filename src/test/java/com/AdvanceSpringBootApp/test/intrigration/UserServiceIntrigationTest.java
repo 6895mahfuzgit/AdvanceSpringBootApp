@@ -27,6 +27,7 @@ public class UserServiceIntrigationTest {
     @Autowired
     private UserService userService;
 
+/*
 
     @Test
     public void testCreateNewUer() throws Exception {
@@ -41,5 +42,6 @@ public class UserServiceIntrigationTest {
 
 
     }
+*/
 
 }
