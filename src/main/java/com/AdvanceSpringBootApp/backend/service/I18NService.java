@@ -1,4 +1,4 @@
-package com.AdvanceSpringBootApp.web.i18n;
+package com.AdvanceSpringBootApp.backend.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

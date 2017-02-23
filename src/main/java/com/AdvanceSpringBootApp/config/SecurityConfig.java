@@ -1,6 +1,7 @@
 package com.AdvanceSpringBootApp.config;
 
 import com.AdvanceSpringBootApp.backend.service.UserSecurityService;
+import com.AdvanceSpringBootApp.web.controllers.ForgotPasswordController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -48,7 +49,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/about/**",
             "/contact/**",
             "/error/**/*",
-            "/console/**"
+            "/console/**",
+            ForgotPasswordController.FORGOT_PASSWORD_URL_MAPPING,
+
 
     };
 

@@ -1,6 +1,6 @@
 package com.AdvanceSpringBootApp;
 
-import com.AdvanceSpringBootApp.web.i18n.I18NService;
+import com.AdvanceSpringBootApp.backend.service.I18NService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
